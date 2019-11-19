@@ -11,19 +11,24 @@
     <h1>App Title</h1>
     <p>Explanation/Introduction of purpose/features</p>
 
-    <form id="refuge-search-form">
+    <!-- <form id="refuge-search-form">
         <p class="instructions">Brief instructions?</p>
         <label for="address-search">Address</label>
         <input type="text" name="address-search" id="refuge-search-form-address" required>
-        <label for="max-results">User sets max - numeric or distance?</label>
-        <input type = "number" name="max-results" id="refuge-search-form-max-results" value = "5">
-        <input type="submit" value="Show me!">
+        <input id="submit" type="submit" value="Show me!">
     </form>
-    <a href=""><h3>Show me how this works</h3></a>
+     -->
+
+     <div id="floating-panel">
+        <input id="address" type="textbox" value="Washington, DC">
+        <input id="submit" type="button" value="Geocode">
+      </div>
+      <div id="map"></div>
 
     <section id="results-view" class="hidden">
         <h2>Search Results</h2>
-        <div id="map"></div>
+        <!-- <div id="map"></div> -->
+        <a href=""><h4>Show me how this works</h4></a>
 
     </section>
     <section id="error" class="hidden">
@@ -37,6 +42,7 @@
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
-    <script src="javascript.js"></script>
+    <!-- <script src="javascript.js"></script> -->
+    <script src="geocoder.js"></script>
 </body>
 </html>
