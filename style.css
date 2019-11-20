@@ -3,3 +3,7 @@
     height: 400px;
     background-color: rgb(211, 208, 208);
 }
+
+.hidden {
+    display: none;
+}
