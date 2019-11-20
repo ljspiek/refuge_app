@@ -1,6 +1,6 @@
-Refuge App
+<h1>Refuge Map App</h1>
 
-(name in progress)
+
 
 
 
