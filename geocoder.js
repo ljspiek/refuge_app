@@ -68,6 +68,7 @@ function geocodeAddress(geocoder, resultsMap) {
             position: results[0].geometry.location,
             title: "Your Location",
           });
+          // .catch(err => alert(err))
         } );
     
       //if results OK, run function to place markers for that area
@@ -78,7 +79,7 @@ function geocodeAddress(geocoder, resultsMap) {
 
 
 
-// let marker = new google.maps.Marker({
-//   position: myLatLng,
-//   map: map,
-// })
+
+
+
+
