@@ -1,5 +1,6 @@
 const rootUrl = 
 "https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=100&offset=0";
+
 //creating default with center location in Washington, DC
 function initMap() {
   let myLatLng = {lat: 38.9071923, lng: -77.0368707};
@@ -28,13 +29,23 @@ function placeMarkers(data, map) {
     // console.log(name);
     let directions = data[i].directions;
     let comments = data[i].comment;
+    let contentString = `<h1>${name}</h1>`;
+    let infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
 
-    new google.maps.Marker({
+    let marker = new google.maps.Marker({
       position: markerLatLng,
       map: map,
       title: name,
-      directions: directions,
-      comments: comments
+      // directions: directions,
+      // comments: comments
+    });
+
+    
+     
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
     });
   }
 }
@@ -54,7 +65,8 @@ function geocodeAddress(geocoder, resultsMap) {
         resultsMap.setCenter(results[0].geometry.location);
           var marker = new google.maps.Marker({
             map: resultsMap,
-            position: results[0].geometry.location
+            position: results[0].geometry.location,
+            title: "Your Location",
           });
         } );
     
