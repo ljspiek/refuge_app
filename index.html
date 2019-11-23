@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="toast/jquery.toast.min.css">
     <link rel="shortcut icon" type="image/png" href="img/rest_room_icon_127278.ico">
     <title>Refuge Maps</title>
 </head>
@@ -40,14 +41,15 @@
         <h2>Something went wrong:</h2>
         <p id="error-message">No results found; please try another address search</p>
     </section>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJE1XkK5LCEWPxGEWXQrRRfpXOCagNxFo&callback=initMap">
-    </script>
+    
     <script
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
-    <!-- <script src="javascript.js"></script> -->
+    <script src="toast/jquery.toast.min.js"></script>
     <script src="geocoder.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJE1XkK5LCEWPxGEWXQrRRfpXOCagNxFo&callback=initMap">
+    </script>
 </body>
 </html>

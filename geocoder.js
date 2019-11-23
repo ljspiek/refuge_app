@@ -66,7 +66,7 @@ function geocodeAddress(geocoder, resultsMap) {
   geocoder.geocode({ address }, function(results, status) {
     console.log(results[0]);
     if (!results[0]) {
-      console.log("yes")
+      displayErrorToast()
     }
     const lat = results[0].geometry.location.lat();
     const lng = results[0].geometry.location.lng();
@@ -91,6 +91,18 @@ function geocodeAddress(geocoder, resultsMap) {
           
   });
 }
+
+function displayErrorToast() {
+  document.addEventListener("DOMContentLoaded", function(event) { 
+    $.toast({
+      heading: 'Error',
+      text: 'Report any <a href="https://github.com/kamranahmedse/jquery-toast-plugin/issues">issues</a>',
+      showHideTransition: 'fade',
+      icon: 'error'
+    })
+});
+}
+
 
 
 
