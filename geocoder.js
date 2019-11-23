@@ -21,7 +21,7 @@ function initMap() {
       })
   });
 }
-
+//creates markers and infowindows for all Refuge locations
 function placeMarkers(data, map) {
   for(let i = 0; i < data.length; i++) {
     let name = data[i].name;
@@ -29,7 +29,17 @@ function placeMarkers(data, map) {
     // console.log(name);
     let directions = data[i].directions;
     let comments = data[i].comment;
-    let contentString = `<h1>${name}</h1>`;
+    let accessible = data[i].accessible;
+    let unisex = data[i].unisex;
+    let changingTable = data[i].changing_table;
+    let contentString = `<h4 class="Name">${name}</h4>
+    <ul class = "refugeFeatures">
+        <li class = refugeFeatures-items>Directions: ${directions}</li>
+        <li class = refugeFeatures-items>Comments: ${comments}</li>
+        <li class = refugeFeatures-items>Unisex: ${unisex}</li>
+        <li class = refugeFeatures-items>Accessible: ${accessible}</li>
+        <li class = refugeFeatures-items>Changing Table: ${changingTable}</li>
+    </ul>`;
     let infowindow = new google.maps.InfoWindow({
       content: contentString
     });
@@ -54,13 +64,18 @@ function placeMarkers(data, map) {
 function geocodeAddress(geocoder, resultsMap) {
   var address = document.getElementById('address').value;
   geocoder.geocode({ address }, function(results, status) {
+    console.log(results[0]);
+    if (!results[0]) {
+      console.log("yes")
+    }
     const lat = results[0].geometry.location.lat();
     const lng = results[0].geometry.location.lng();
     // latLng = {`lat:${'lat'}, lng: ${'lng'} `}
+    console.log(lat);
+    console.log(lng);
     fetch(`${rootUrl}&lat=${lat}&lng=${lng}`)
         .then(res => res.json())
         .then(data => {
-        console.log(data);
         placeMarkers(data, resultsMap);
         resultsMap.setCenter(results[0].geometry.location);
           var marker = new google.maps.Marker({
