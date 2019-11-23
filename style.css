@@ -1,11 +1,12 @@
 * {
     box-sizing: border-box;
   }
-  body {
-    font-family: "Roboto", sans-serif;
-    padding-top: 120px; 
-    
-  }
+
+body {
+  font-family: "Roboto", sans-serif;
+  padding-top: 100px; 
+  margin: 0;
+}
   
   [role="bar"] {
     position: fixed;
@@ -32,8 +33,14 @@
 
 }
 
+.intro {
+  padding-bottom: 10px;
+  margin-left: 20px;
+}
 
-
+ul {
+  padding: 20px;
+}
   
 
   #floating-panel {
@@ -65,31 +72,35 @@
 } */
 
 #address {
-        border:2px solid black;
-        font-size:1em;
-        padding:.25em .5em .3125em;
-        border-radius: 1em;
-        background:transparent;
-        transition:all .100s;       
+  border:2px solid black;
+  font-size:1em;
+  padding:.25em .5em .3125em;
+  border-radius: 1em;
+  background:transparent;
+  transition:all .100s; 
+  margin-left: 20px;      
 }
 
 
 
 #submit {
-        border:2px solid black;
-        font-size:1em;
-        padding:.25em .5em .3125em;
-        border-radius: 1em;
-        background:transparent;
-        transition:all .100s; 
+  border:2px solid black;
+  font-size:1em;
+  padding:.25em .5em .3125em;
+  border-radius: 1em;
+  background:transparent;
+  transition:all .100s; 
+  margin-top: 8px;
+  margin-left: 20px;
 }
 
 #popup {
-    width: 100%;
-    height: 220px;
-    border: 1px solid black;
-    background: #efefef;
-    display: none;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  background: #efefef;
+  display: none;
+  padding: 10px;
 }
 
 /* .close-btn {
@@ -102,12 +113,22 @@
     top: 100%
 } */
 
+footer {
+  height: 200px;
+  background-color: #efefef;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
 @media screen and (min-width: 1280px) {
     #map {
         height: 650px;
+        border: rgb(223, 220, 220) solid 10px;
+        border-radius: 1.5%;
     }
     .app-name {
-        font-size: 2em;
+        font-size: 2.8em;
     }
     #popup {
         border:2px solid black;
@@ -117,8 +138,18 @@
         /* background:transparent; */
         
     }
+
+    [role="bar"] {
+      padding: 12px;
+    }
+
+    .intro {
+      line-height: 16px;
+      font-size: 20px;
+    }
     }
   
+
 
 
 

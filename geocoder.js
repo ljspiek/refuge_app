@@ -24,9 +24,20 @@ function initMap() {
 //creates markers and infowindows for all Refuge locations
 function placeMarkers(data, map) {
   for(let i = 0; i < data.length; i++) {
+    let place = data[i];
+    Object.keys(place).forEach(function(key){
+      if(place[key] === false) {
+        place[key] = "No"
+      }
+      else if(place[key] === true) {
+        place[key] = "Yes"
+      }
+      else if(place[key] === null) {
+        place[key] = "None"
+      }
+    })
     let name = data[i].name;
     let markerLatLng = {lat: data[i].latitude, lng: data[i].longitude}
-    // console.log(name);
     let directions = data[i].directions;
     let comments = data[i].comment;
     let accessible = data[i].accessible;
@@ -49,7 +60,7 @@ function placeMarkers(data, map) {
       map: map,
       title: name,
       icon: {                             
-        url: "http://maps.google.com/mapfiles/ms/icons/purple.png"
+        url: "http://maps.google.com/mapfiles/ms/icons/blue.png"
       }
      
     });
@@ -66,14 +77,14 @@ function placeMarkers(data, map) {
 function geocodeAddress(geocoder, resultsMap) {
   var address = document.getElementById('address').value;
   geocoder.geocode({ address }, function(results, status) {
-    console.log(results[0]);
     if (!results[0]) {
       $.toast({
         heading: 'Error',
         text: 'Location not found. Please try a different search.',
         showHideTransition: 'fade',
         icon: 'error',
-        hideAfter: false,
+        hideAfter: 8000,
+        LoaderColor: 'blue',
       })
     }
     const lat = results[0].geometry.location.lat();
@@ -81,7 +92,7 @@ function geocodeAddress(geocoder, resultsMap) {
     fetch(`${rootUrl}&lat=${lat}&lng=${lng}`)
         .then(res => res.json())
         .then(data => {
-          placeMarkers(data, resultsMap);
+          
           if (data.length === 0) {
             $.toast({
               heading: 'Sorry',
@@ -97,6 +108,7 @@ function geocodeAddress(geocoder, resultsMap) {
             title: "Your Location",
           });
         } else {
+          placeMarkers(data, resultsMap);
           resultsMap.setCenter(results[0].geometry.location);
           var marker = new google.maps.Marker({
             map: resultsMap,

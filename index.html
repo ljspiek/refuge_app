@@ -11,49 +11,39 @@
 </head>
 <body>
     <nav class="navbar" role="bar">
-    <!-- <div class="hamburger">&#9776;</div> -->
-    <span class="app-name"> Refuge App </span>
+    <span class="app-name"> Refuge Maps </span>
 	<div class="help-button">
     <button class="help-btn" id="help-btn" type="button">?</button>
     <div id="popup">
-        <p>Refuge Restrooms are community-identified safe restrooms for transgender, intersex, and gender nonconforming individuals.</p>
-        <p>Search for your address to find the nearest Refuge restroom locations.</p>
-        <p>Click the marker to get additional details, such as location name, directions, comments, and restroom details.</p>
-    <!-- <button class="close-btn" onclick="document.getElementById('popup').style.display='none'"">X</button> -->
+        <h3>Why are safe restrooms or Refuges so important?</h3>
+        <p>Using the restroom is an everyday activity that can be difficult for tansgender, intersex, and gender nonconforming individuals.</p>
+        <p>According to the <a href="https://transequality.org/sites/default/files/docs/usts/USTS-Full-Report-Dec17.pdf" target=blank>US Trans Survey</a>:</p>
+        <ul>
+            <li>59% of respondents avoided using a restroom for fear of confrontation</li>
+            <li>31% avoided eating or drinking while out to avoid having to use the restroom</li>
+            <li>24% had their presence in a restroom questioned</li>
+            <li>12% had been harassed, attacked, or sexually assaulted in a restroom</li>
+            <li>9% had been denied restroom access</li>
+            <li>8% had developed a kidney issue or urinary tract infection from avoiding bathroom usage</li>
+        </ul>
+     
+    
     </div>
     </div>
 	</nav>
-    <!-- <p>Refuge Restrooms are community-identified safe restrooms for transgender, intersex, and gender nonconforming individuals.</p>
-    <p>Search for your address to find the nearest Refuge restroom locations.</p>
-    <p>Click the marker to get additional details, such as location name, directions, comments, and restroom details.</p> -->
 
-    <!-- <form id="refuge-search-form">
-        <p class="instructions">Brief instructions?</p>
-        <label for="address-search">Address</label>
-        <input type="text" name="address-search" id="refuge-search-form-address" required>
-        <input id="submit" type="submit" value="Show me!">
-    </form>
-     -->
 
      <div id="floating-panel">
-        <input id="address" type="textbox" value="Washington, DC">
+         <p class="intro">Everyone deserves a safe place. Use the address search to find Refuge locations near you.<br><br>Click the purple Refuge marker for additional details.</p>
+        <input id="address" type="textbox" placeholder="Type your address here">
         <input id="submit" type="button" value="Find Refuges">
       </div>
       <div id="map"></div>
      
 
-    <section id="results-view" class="hidden">
-        <h2>Search Results</h2>
-        <a href=""><h4>Show me how this works</h4></a>
-        <!-- <div id="map"></div> -->
-        
-
-    </section>
-    <section id="error" class="hidden">
-        <h2>Something went wrong:</h2>
-        <p id="error-message">No results found; please try another address search</p>
-    </section>
-    
+    <footer>
+        <p>Version 1.0</p>
+    </footer>
     <script
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="toast/jquery.toast.min.js"></script>
