@@ -68,40 +68,50 @@ function geocodeAddress(geocoder, resultsMap) {
     if (!results[0]) {
       $.toast({
         heading: 'Error',
-        text: 'Report any <a href="https://github.com/kamranahmedse/jquery-toast-plugin/issues">issues</a>',
+        text: 'Location not found. Please try a different search.',
         showHideTransition: 'fade',
-        icon: 'error'
+        icon: 'error',
+        hideAfter: false,
       })
     }
     const lat = results[0].geometry.location.lat();
     const lng = results[0].geometry.location.lng();
-    // latLng = {`lat:${'lat'}, lng: ${'lng'} `}
-    console.log(lat);
-    console.log(lng);
     fetch(`${rootUrl}&lat=${lat}&lng=${lng}`)
         .then(res => res.json())
         .then(data => {
-        placeMarkers(data, resultsMap);
-        resultsMap.setCenter(results[0].geometry.location);
+          placeMarkers(data, resultsMap);
+          if (data.length === 0) {
+            $.toast({
+              heading: 'Sorry',
+              text: 'No Refuges found near this location.',
+              showHideTransition: 'plain',
+              icon: 'warning',
+              hideAfter: false
+          });
+          resultsMap.setCenter(results[0].geometry.location);
           var marker = new google.maps.Marker({
             map: resultsMap,
             position: results[0].geometry.location,
             title: "Your Location",
           });
-          // .catch(err => alert(err))
+        } else {
+          resultsMap.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+            map: resultsMap,
+            position: results[0].geometry.location,
+            title: "Your Location",
+          });
+
+        }
+        
+         
         } );
-    
-      //if results OK, run function to place markers for that area
-      // placeMarkers(data);
+
           
   });
 }
 
-// function displayErrorToast() {
-//   document.addEventListener("DOMContentLoaded", function(event) { 
-    
-// });
-// }
+
 
 
 
