@@ -48,8 +48,10 @@ function placeMarkers(data, map) {
       position: markerLatLng,
       map: map,
       title: name,
-      // directions: directions,
-      // comments: comments
+      icon: {                             
+        url: "http://maps.google.com/mapfiles/ms/icons/purple.png"
+      }
+     
     });
 
     
