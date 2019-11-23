@@ -113,12 +113,7 @@ function geocodeAddress(geocoder, resultsMap) {
   });
 }
 
-
-
-
-
-
-
-
-
-
+$("#help-btn").click(function() {
+  $('#popup').toggle(function() {
+  }); 
+})
