@@ -1,9 +1,49 @@
+* { Box-sizing: Border-box }
+
 #map {
     width: 100%;
     height: 400px;
-    background-color: rgb(211, 208, 208);
 }
 
 .hidden {
     display: none;
 }
+
+/*.header {
+    justify-content: center;
+} */
+
+#address {
+        border:2px solid black;
+        font-size:1em;
+        padding:.25em .5em .3125em;
+        border-radius: 1em;
+        background:transparent;
+        transition:all .100s;       
+}
+
+
+
+#submit {
+    border:2px solid black;
+        font-size:1em;
+        padding:.25em .5em .3125em;
+        border-radius: 1em;
+        background:transparent;
+        transition:all .100s; 
+}
+
+
+@media screen and (min-width: 1280px) {
+    #map {
+        height: 650px;
+    }
+    }
+  
+
+
+
+   
+  
+   
+  
