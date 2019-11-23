@@ -48,8 +48,10 @@ function placeMarkers(data, map) {
       position: markerLatLng,
       map: map,
       title: name,
-      // directions: directions,
-      // comments: comments
+      icon: {                             
+        url: "http://maps.google.com/mapfiles/ms/icons/purple.png"
+      }
+     
     });
 
     
@@ -66,31 +68,53 @@ function geocodeAddress(geocoder, resultsMap) {
   geocoder.geocode({ address }, function(results, status) {
     console.log(results[0]);
     if (!results[0]) {
-      console.log("yes")
+      $.toast({
+        heading: 'Error',
+        text: 'Location not found. Please try a different search.',
+        showHideTransition: 'fade',
+        icon: 'error',
+        hideAfter: false,
+      })
     }
     const lat = results[0].geometry.location.lat();
     const lng = results[0].geometry.location.lng();
-    // latLng = {`lat:${'lat'}, lng: ${'lng'} `}
-    console.log(lat);
-    console.log(lng);
     fetch(`${rootUrl}&lat=${lat}&lng=${lng}`)
         .then(res => res.json())
         .then(data => {
-        placeMarkers(data, resultsMap);
-        resultsMap.setCenter(results[0].geometry.location);
+          placeMarkers(data, resultsMap);
+          if (data.length === 0) {
+            $.toast({
+              heading: 'Sorry',
+              text: 'No Refuges found near this location.',
+              showHideTransition: 'plain',
+              icon: 'warning',
+              hideAfter: false
+          });
+          resultsMap.setCenter(results[0].geometry.location);
           var marker = new google.maps.Marker({
             map: resultsMap,
             position: results[0].geometry.location,
             title: "Your Location",
           });
-          // .catch(err => alert(err))
+        } else {
+          resultsMap.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+            map: resultsMap,
+            position: results[0].geometry.location,
+            title: "Your Location",
+          });
+
+        }
+        
+         
         } );
-    
-      //if results OK, run function to place markers for that area
-      // placeMarkers(data);
+
           
   });
 }
+
+
+
 
 
 
