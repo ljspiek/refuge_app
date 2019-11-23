@@ -1,0 +1,56 @@
+{
+  "name": "native-toast",
+  "version": "2.0.0",
+  "description": "Native-like toast notification but for the web.",
+  "license": "MIT",
+  "repository": "egoist/native-toast",
+  "author": {
+    "name": "EGOIST",
+    "email": "0x142857@gmail.com",
+    "url": "https://github.com/egoist"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "eslint src/js/*.js",
+    "prepublishOnly": "npm run build",
+    "build": "gulp build",
+    "build:js": "bili src/js/index.js --js buble --format cjs,umd,umd-min --module-name nativeToast",
+    "dev": "gulp",
+    "gh": "npm run build && npm run site && gh-pages -d ./site",
+    "site": "mkdir -p site && cp -r dist site/ && cp index.html site/"
+  },
+  "main": "dist/native-toast.cjs.js",
+  "cdn": "dist/native-toast.js",
+  "unpkg": "dist/native-toast.js",
+  "jsdelivr": "dist/native-toast.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "toast",
+    "android",
+    "notification"
+  ],
+  "devDependencies": {
+    "bili": "^3.0.15",
+    "eslint": "^3.13.1",
+    "eslint-config-rem": "^2.0.2",
+    "gh-pages": "^0.12.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-serve": "^1.2.0",
+    "postcss-cssnext": "^2.5.2",
+    "postcss-mixins": "^6.2.0"
+  },
+  "dependencies": {
+    "gulp-stylus": "^2.7.0",
+    "nano-assign": "^1.0.0"
+  },
+  "eslintConfig": {
+    "extends": "rem/esnext-browser"
+  }
+}
