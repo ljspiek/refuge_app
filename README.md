@@ -21,7 +21,7 @@
     <li>API connections: Google Maps API and Refuge API</li>
 </ul>
 
-<h2><a href="https://ljspiek.github.io/refuge_app/">Click to view the live app</a>
+<h2><a href="https://ljspiek.github.io/refuge_app/" target=blank>Click to view the live app</a>
 
 <h2>Screenshots</h2>
 
