@@ -14,11 +14,7 @@ function initMap() {
   document.getElementById('submit').addEventListener('click', function() {
     geocodeAddress(geocoder, map);
     
-    let marker = new google.maps.Marker({
-      position: myLatLng,
-      map: map,
-      title: "test",
-      })
+
   });
 }
 //creates markers and infowindows for all Refuge locations
@@ -84,7 +80,7 @@ function geocodeAddress(geocoder, resultsMap) {
         showHideTransition: 'fade',
         icon: 'error',
         hideAfter: 8000,
-        LoaderColor: 'blue',
+        
       })
     }
     const lat = results[0].geometry.location.lat();
@@ -99,7 +95,7 @@ function geocodeAddress(geocoder, resultsMap) {
               text: 'No Refuges found near this location.',
               showHideTransition: 'plain',
               icon: 'warning',
-              hideAfter: false
+              hideAfter: 8000,
           });
           resultsMap.setCenter(results[0].geometry.location);
           var marker = new google.maps.Marker({

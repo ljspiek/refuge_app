@@ -13,7 +13,7 @@
     <nav class="navbar" role="bar">
     <span class="app-name"> Refuge Maps </span>
 	<div class="help-button">
-    <button class="help-btn" id="help-btn" type="button">?</button>
+    <button class="help-btn" id="help-btn" type="button" title="More Information">?</button>
     <div id="popup">
         <h3>Why are safe restrooms or Refuges so important?</h3>
         <p>Using the restroom is an everyday activity that can be difficult for tansgender, intersex, and gender nonconforming individuals.</p>
@@ -34,15 +34,19 @@
 
 
      <div id="floating-panel">
-         <p class="intro">Everyone deserves a safe place. Use the address search to find Refuge locations near you.<br><br>Click the purple Refuge marker for additional details.</p>
-        <input id="address" type="textbox" placeholder="Type your address here">
-        <input id="submit" type="button" value="Find Refuges">
+         <p class="intro">Everyone deserves a safe place. Use the address search to find Refuge locations near you.<br><br>Click the blue Refuge marker for additional details.</p>
+        <input id="address" type="text" placeholder="Type your address here">
+        <input id="submit" type="button" value="Find Refuges" title="Search">
       </div>
       <div id="map"></div>
      
 
     <footer>
-        <p>Version 1.0</p>
+        <ul class="closing-thoughts">
+            <li><a href="https://www.patreon.com/refugerestrooms" target=blank><img class ="patreon" src="img/patreon-1_1_orig.png" alt="If you believe everyone deserves a safe space, become a patron at Patreon."></a></li>
+            <li>Version 1.0</li>
+            <li>November 2019</li>
+        </ul>
     </footer>
     <script
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
