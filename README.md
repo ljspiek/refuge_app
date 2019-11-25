@@ -1,16 +1,30 @@
 <h1>Refuge Map App</h1>
+<p>Refuges are safe restrooms for transgender, intersex, and gender nonconforming individuals.</p>
 
-<h2>MVP Notes:</h2>
+<h2>Version 1 Features:</h2>
 
 <ul>
     <li>This app allows users to search by address</li>
     <li>Upon clicking 'Find Refuges' the address entered will be pinned along with the nearest Refuges</li>
-    <li>Refuges are safe restrooms for transgender, intersex, and gender nonconforming individuals</li>
-    <li>MVP functionality allows users to hover over markers for the name of the Refuge</li>
-    <li>Future development will enhance these capabilities and add styling to improve the experience</li>
-    <li>Some potential future enhancements include: dark mode, customized markers, route preview, and Refuge marker pop-up details</li>
+    <li>Invalid address entries will produce an error message</li>
+    <li>If no Refuges are found, users will receive a warning message asking them to search for another address</li>
 
 </ul> 
+
+<h2><a href="https://ljspiek.github.io/refuge_app/">Click to view the live app</a>
+
+<h2>Screenshots</h2>
+
+<h4>Desktop:</h4>
+<img src="img/Desktop.Screenshot.png">
+
+<h4>Mobile:</h4>
+<img src="img/Mobile.screenshot.png">
+
+<h3>Support Refuges!<h3>
+<a href="https://www.patreon.com/refugerestrooms" target=blank><img class ="patreon" src="img/patreon-1_1_orig.png" alt="If you believe everyone deserves a safe space, become a patron at Patreon."></a>
+
+
 
 
 
